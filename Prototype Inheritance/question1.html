@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Inheritance Model</title>
+</head>
+<body>
+    <h1>Question 1</h1>
+</body>
+</html>
+
+<script>
+
+// Using Object.create() method
+
+console.log("Using Object.create() method")
+
+let grandParents = {
+    father : "Krishna",
+    mother : "Radhe"
+}
+
+let Parents = Object.create(grandParents);
+
+let Me = Object.create(Parents);
+
+console.log("grandParents : ")
+console.log(grandParents);
+
+console.log("Parents : ")
+console.log(Parents);
+
+console.log("Me : ")
+console.log(Me);
+
+
+// Using Constructor Function
+
+function GrandParents(){
+ this.family = "Sooryavamsha";
+}
+
+GrandParents.prototype.father = "Krishna";
+GrandParents.prototype.mother = "Radhe";
+
+let parents = new GrandParents();
+ 
+let me = new GrandParents();
+
+console.log("===============");
+
+console.log("Using Constructor Function")
+
+console.log("grandParents : ")
+console.log(GrandParents)
+
+console.log("Parents : ")
+console.log(parents)
+
+console.log("Me : ")
+console.log(me)
+
+
+
+</script>

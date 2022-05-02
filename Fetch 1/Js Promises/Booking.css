@@ -1,0 +1,24 @@
+#container{
+    width: 40%;
+    height: 500px;
+    padding: 2%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 2% auto;
+    text-align: left;
+    font-family: sans-serif;
+    border-radius: 6px;
+}
+h2{
+    margin: 0;
+    color: maroon;
+    background-color: yellow;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+input{
+    display: block;
+    margin-bottom: 4%;
+    width: 85%;
+    height: 25px;
+}

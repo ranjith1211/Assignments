@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>idex Page</title>
+    <link rel="stylesheet" href="./question2.css">
+  </head>
+  <body>
+    <div id="nav">
+    </div>
+
+    <div id="main">
+      <button id="repo">Get repo details</button>
+    </div>
+  </body>
+</html>
+
+
+<script type="module">
+
+  var data;
+    import getData from "./scripts/getdata.js"
+
+  import navbar from './index parts/nav.js'
+
+  let nav = document.getElementById('nav');
+
+  nav.innerHTML = navbar();
+
+  let searchBox = document.getElementById('search-input');
+  searchBox.addEventListener('keypress',makeAPICall);
+
+  async function makeAPICall(e){
+     if(e.key === "Enter"){
+
+    let user = searchBox.value;
+
+    // make  fetch call
+    let response = await getData(user)
+    console.log(response);
+    
+  let img = document.getElementById('profile-img');
+  img.src = response.avatar_url;
+     
+     data = response.repos_url
+     }
+  }
+
+  let btn = document.getElementById('repo');
+  btn.addEventListener('click', getUserRepos);
+
+  async function getUserRepos(){
+     let res = await fetch(data);
+     
+     let main = await res.json();
+
+     console.log(main);
+  }
+let user = document.getElementById('user')
+user.innerHTML = JSON.parse(localStorage.getItem("user"));
+user.style.margin = '0';
+
+  // add event
+</script>

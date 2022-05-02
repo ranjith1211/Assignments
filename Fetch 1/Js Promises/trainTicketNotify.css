@@ -1,0 +1,39 @@
+*{
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+#hd{
+    width: 60%;
+    height: 500px;
+    border: 5px solid red;
+    border-radius: 6px;
+    margin: 3% auto; 
+    text-align: center;
+    padding: 2%;
+}
+h1{
+    margin: 0;
+    text-decoration: underline purple;
+    color: maroon;
+    margin-bottom: 2%;
+}
+#notify{
+    height: 30px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+     
+}
+
+.available{
+    width: 75%;
+    height: 50%;
+    border: 1px solid teal;
+    border-radius: 6px;
+    margin: 1% auto;
+    padding: 1.5%;
+}
+

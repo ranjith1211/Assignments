@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Constructor</title>
+</head>
+<body>
+    <h1>Question NO 4</h1>
+</body>
+</html>
+
+<script>
+
+ // Array Constructor Function
+
+ function Array(){
+
+     Object.defineProperty(this, "length", {
+         value: 0,
+         writable: true,
+         enumerable: false,
+         configurable: true
+     });
+
+     this.length = arguments.length;
+
+     for(let i = 0; i < arguments.length; i++){
+         this[i] = arguments[i];
+     }
+ }
+
+let arr = new Array("Kho-Kho", "Kabaddi", "Volleyball", "Rugby", "Cricket");
+
+// Pushing a new value to the array
+Array.prototype.pushing = function(x){
+    this[this.length] = x;
+    this.length++;
+}
+
+arr.pushing("Basketball");
+console.log("After pushing Basketball");
+console.log(arr);
+
+//Reversing the array and returning it
+
+Array.prototype.reversing = function(){
+    let arr = this;
+    let left = 0, right = this.length - 1;
+    while(left < right){
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+    }
+    return arr;
+}
+
+console.log("Afer reversing array and returning it");
+console.log(arr.reversing());
+
+//Returning first element from the array
+Array.prototype.returnFirst = function(){
+    return this[0];
+}
+
+console.log("Returning first element from the array");
+console.log(arr.returnFirst())
+
+//printing the array in Array format, not the object one.
+Array.prototype.printArr = function(){
+    console.log(Object.values(this));
+}
+
+console.log("printing the array in Array format, not the object one. ")
+console.log(arr.printArr());
+
+//return the last element from the array
+Array.prototype.returnLast = function(){
+    return this[this.length - 1];
+}
+console.log("return the last element from the array");
+console.log(arr.returnLast());
+</script>
